@@ -1247,10 +1247,10 @@
   resolved "https://registry.yarnpkg.com/@sambego/storybook-styles/-/storybook-styles-1.0.0.tgz#4f840ee26dd0b25dcb803a75caa42e16071dcaae"
   integrity sha512-n0SqZwDewUDRaStEcoNMiYy9qovaLVStsh4Gb2dc2LLiG3IIK0UXdeR1N7puVuRihJq/192uOyGPCjZ/NAteuA==
 
-"@tinacms/cli@0.60.2":
-  version "0.60.2"
-  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.60.2.tgz#58e28e33e7f89795f562858e6f1515b0c5c1b4c5"
-  integrity sha512-0NOWVxJHdYyXmGqV8H6Es996o2hTYAkotzvMm/wL3g7oO8voK6p9dcAdIKWwv3iyyjwJcQl03WhnuRlz2Vn4Wg==
+"@tinacms/cli@build-stores-during-ci":
+  version "0.0.0-202211203148"
+  resolved "https://registry.yarnpkg.com/@tinacms/cli/-/cli-0.0.0-202211203148.tgz#3d52e549b28b5cbd66d73e7f5654f2365f040c6d"
+  integrity sha512-ookxKHxqTQeUzVtyKQ72O543LhCwHgF4/gTOqGZHjBohOnVpnohWHVz1BBE6+sbbg3hzzb7IIXVoOt7P+S/aBQ==
   dependencies:
     "@graphql-codegen/core" "^2.1.0"
     "@graphql-codegen/plugin-helpers" latest
@@ -1260,8 +1260,9 @@
     "@graphql-codegen/visitor-plugin-common" "^2.4.0"
     "@graphql-tools/graphql-file-loader" "^7.2.0"
     "@graphql-tools/load" "^7.3.2"
-    "@tinacms/datalayer" "0.0.1"
-    "@tinacms/graphql" "0.59.5"
+    "@tinacms/datalayer" "0.0.0-202211203148"
+    "@tinacms/graphql" "0.0.0-202211203148"
+    "@tinacms/metrics" "0.0.0-202211203148"
     ajv "^6.12.3"
     altair-express-middleware "4.0.6"
     auto-bind "^4.0.0"
@@ -1279,17 +1280,17 @@
     js-yaml "^4.0.0"
     lodash "^4.17.19"
     lodash.get "^4.4.2"
-    log4js "^6.3.0"
+    log4js "^6.4.0"
     normalize-path "^3.0.0"
     progress "^2.0.3"
     prompts "^2.4.1"
     typescript "^4.3.5"
     yup "^0.32.9"
 
-"@tinacms/datalayer@0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@tinacms/datalayer/-/datalayer-0.0.1.tgz#711e488b7052fc36dfa23517a9424f654096832a"
-  integrity sha512-L003RgOcnmDZycHOy17TP+CdMFvN9MFDExjnRy5CT9/2kT0pJJykDjMYlqe6QRDFYcjG/uvIeaszUi5v7wXmIg==
+"@tinacms/datalayer@0.0.0-202211203148":
+  version "0.0.0-202211203148"
+  resolved "https://registry.yarnpkg.com/@tinacms/datalayer/-/datalayer-0.0.0-202211203148.tgz#f8fa59f86232047b010d08427ddd892d7f652ab6"
+  integrity sha512-+7buC7VD38udzycnUV0Hl4OHWuw/H90iWwhIYGG2JnKjBpOUFe98zsC8ebf4lnuq8XDgBtaRVNw2DL8brJ9WiQ==
   dependencies:
     "@octokit/auth-app" "^2.6.0"
     "@octokit/graphql" "^4.5.6"
@@ -1308,10 +1309,10 @@
     prettier "^2.2.1"
     yup "^0.32.9"
 
-"@tinacms/graphql@0.59.5":
-  version "0.59.5"
-  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.59.5.tgz#fe40d1dbf674f648f725ae45c0df3cc447cf8504"
-  integrity sha512-zxpN8lnSnqJjWWxeqa2CrAOqyK7uES9SpR/TwFSpvp1wJMQAJeCjK6vKn8acynBQtrEBc/VvtzKOEPvFer9kkA==
+"@tinacms/graphql@0.0.0-202211203148":
+  version "0.0.0-202211203148"
+  resolved "https://registry.yarnpkg.com/@tinacms/graphql/-/graphql-0.0.0-202211203148.tgz#ce7e9ee2891e0191ddf327b89a06d92a005f3b0c"
+  integrity sha512-V7f88D+6mx39kkDUSf3o3vjY73K5ksVpIhzKfSO2zltmg1Ly4MPgi2oCFTeujgskqJkYenSmDhZ+WE0n/BxqdA==
   dependencies:
     body-parser "^1.19.0"
     cors "^2.8.5"
@@ -1353,6 +1354,13 @@
     vfile "^4.2.0"
     ws "^7.3.1"
     yup "^0.32.9"
+
+"@tinacms/metrics@0.0.0-202211203148":
+  version "0.0.0-202211203148"
+  resolved "https://registry.yarnpkg.com/@tinacms/metrics/-/metrics-0.0.0-202211203148.tgz#769d9c830e77609924d0c82cd32638d70a06e9be"
+  integrity sha512-HRhh1uNQ04hrw75kQnx2eT4Vugnisr+91iWq4nK8W/+o1AUFaVKArFs7cberhNzEvubAIvghPRNaGrEirbYWgQ==
+  dependencies:
+    isomorphic-fetch "^3.0.0"
 
 "@tinacms/sharedctx@0.1.0":
   version "0.1.0"
@@ -5705,6 +5713,14 @@ isobject@^3.0.0, isobject@^3.0.1:
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   integrity sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
 
+isomorphic-fetch@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/isomorphic-fetch/-/isomorphic-fetch-3.0.0.tgz#0267b005049046d2421207215d45d6a262b8b8b4"
+  integrity sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==
+  dependencies:
+    node-fetch "^2.6.1"
+    whatwg-fetch "^3.4.1"
+
 istanbul-lib-coverage@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/istanbul-lib-coverage/-/istanbul-lib-coverage-3.2.0.tgz#189e7909d0a39fa5a3dfad5b03f71947770191d3"
@@ -6148,7 +6164,7 @@ log-symbols@4.1.0:
     chalk "^4.1.0"
     is-unicode-supported "^0.1.0"
 
-log4js@^6.3.0:
+log4js@^6.4.0:
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/log4js/-/log4js-6.4.1.tgz#9d3a8bf2c31c1e213fe3fc398a6053f7a2bc53e8"
   integrity sha512-iUiYnXqAmNKiIZ1XSAitQ4TmNs8CdZYTAWINARF3LjnsLN8tY5m0vRwd6uuWj/yNY0YHxeZodnbmxKFUOM2rMg==
@@ -7067,7 +7083,7 @@ node-fetch@2.6.1:
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
-node-fetch@2.6.7, node-fetch@^2.6.7:
+node-fetch@2.6.7, node-fetch@^2.6.1, node-fetch@^2.6.7:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
   integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
@@ -9686,6 +9702,11 @@ webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
   integrity sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==
+
+whatwg-fetch@^3.4.1:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.6.2.tgz#dced24f37f2624ed0281725d51d0e2e3fe677f8c"
+  integrity sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==
 
 whatwg-url@^5.0.0:
   version "5.0.0"
