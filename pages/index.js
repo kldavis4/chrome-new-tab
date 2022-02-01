@@ -50,8 +50,9 @@ export const getStaticProps = async () => {
       query,
       variables,
     });
-  } catch {
+  } catch (e) {
     // swallow errors related to document creation
+    console.log(e)
   }
 
   return {

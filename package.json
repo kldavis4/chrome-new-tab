@@ -2,9 +2,9 @@
   "name": "starter-basic",
   "private": true,
   "scripts": {
-    "dev": "yarn tinacms server:start -c \"next dev\"",
-    "build": "yarn tinacms server:start -c \"next build\"",
-    "start": "yarn tinacms server:start -c \"next start\"",
+    "dev": "yarn tinacms server:start -c \"next dev\" --experimentalData",
+    "build": "yarn tinacms server:start -c \"next build\" --experimentalData",
+    "start": "yarn tinacms server:start -c \"next start\" --experimentalData",
     "lint": "next lint"
   },
   "dependencies": {
