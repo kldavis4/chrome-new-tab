@@ -1,4 +1,5 @@
 ---
-title: tina-cloud
-url: https://github.com/tinacms/tina-cloud
+title: 'GitHub: tina-cloud'
+url: 'https://github.com/tinacms/tina-cloud'
 ---
+
