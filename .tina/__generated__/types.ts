@@ -56,7 +56,7 @@ export type Document = {
 
 /** A relay-compliant pagination connection */
 export type Connection = {
-  totalCount: Scalars['Float'];
+  totalCount: Scalars['Int'];
 };
 
 export type Query = {
@@ -93,8 +93,8 @@ export type QueryGetDocumentArgs = {
 export type QueryGetDocumentListArgs = {
   before?: InputMaybe<Scalars['String']>;
   after?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Float']>;
-  last?: InputMaybe<Scalars['Float']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
 };
 
 
@@ -106,8 +106,8 @@ export type QueryGetPageDocumentArgs = {
 export type QueryGetPageListArgs = {
   before?: InputMaybe<Scalars['String']>;
   after?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Float']>;
-  last?: InputMaybe<Scalars['Float']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
 };
 
 
@@ -119,8 +119,8 @@ export type QueryGetBookmarksDocumentArgs = {
 export type QueryGetBookmarksListArgs = {
   before?: InputMaybe<Scalars['String']>;
   after?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Float']>;
-  last?: InputMaybe<Scalars['Float']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
 };
 
 export type DocumentConnectionEdges = {
@@ -132,7 +132,7 @@ export type DocumentConnectionEdges = {
 export type DocumentConnection = Connection & {
   __typename?: 'DocumentConnection';
   pageInfo?: Maybe<PageInfo>;
-  totalCount: Scalars['Float'];
+  totalCount: Scalars['Int'];
   edges?: Maybe<Array<Maybe<DocumentConnectionEdges>>>;
 };
 
@@ -153,8 +153,8 @@ export type Collection = {
 export type CollectionDocumentsArgs = {
   before?: InputMaybe<Scalars['String']>;
   after?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Float']>;
-  last?: InputMaybe<Scalars['Float']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
 };
 
 export type DocumentNode = PageDocument | BookmarksDocument;
@@ -183,7 +183,7 @@ export type PageConnectionEdges = {
 export type PageConnection = Connection & {
   __typename?: 'PageConnection';
   pageInfo?: Maybe<PageInfo>;
-  totalCount: Scalars['Float'];
+  totalCount: Scalars['Int'];
   edges?: Maybe<Array<Maybe<PageConnectionEdges>>>;
 };
 
@@ -212,7 +212,7 @@ export type BookmarksConnectionEdges = {
 export type BookmarksConnection = Connection & {
   __typename?: 'BookmarksConnection';
   pageInfo?: Maybe<PageInfo>;
-  totalCount: Scalars['Float'];
+  totalCount: Scalars['Int'];
   edges?: Maybe<Array<Maybe<BookmarksConnectionEdges>>>;
 };
 

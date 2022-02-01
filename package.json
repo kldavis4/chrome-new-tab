@@ -2,9 +2,10 @@
   "name": "starter-basic",
   "private": true,
   "scripts": {
-    "dev": "yarn tinacms server:start -c \"next dev\" --experimentalData",
-    "build": "yarn tinacms server:start -c \"next build\" --experimentalData",
-    "start": "yarn tinacms server:start -c \"next start\" --experimentalData",
+    "dev": "yarn tinacms server:start -c \"next dev\"",
+    "build": "yarn tinacms server:start -c \"next build\"",
+    "export": "yarn build && yarn tinacms server:start -c \"next export\"",
+    "start": "yarn tinacms server:start -c \"next start\"",
     "lint": "next lint"
   },
   "dependencies": {
@@ -16,7 +17,7 @@
     "tinacms": "^0.66.0"
   },
   "devDependencies": {
-    "@tinacms/cli": "^0.60.0",
+    "@tinacms/cli": "0.60.0",
     "eslint": "7",
     "eslint-config-next": "12.0.3"
   }
