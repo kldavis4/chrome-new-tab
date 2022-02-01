@@ -95,7 +95,6 @@ export type QueryGetDocumentListArgs = {
   after?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Float']>;
   last?: InputMaybe<Scalars['Float']>;
-  filter?: InputMaybe<DocumentFilter>;
 };
 
 
@@ -109,7 +108,6 @@ export type QueryGetPageListArgs = {
   after?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Float']>;
   last?: InputMaybe<Scalars['Float']>;
-  filter?: InputMaybe<PageFilter>;
 };
 
 
@@ -123,33 +121,6 @@ export type QueryGetBookmarksListArgs = {
   after?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Float']>;
   last?: InputMaybe<Scalars['Float']>;
-  filter?: InputMaybe<BookmarksFilter>;
-};
-
-export type RichTextFilter = {
-  startsWith?: InputMaybe<Scalars['String']>;
-  eq?: InputMaybe<Scalars['String']>;
-  exists?: InputMaybe<Scalars['Boolean']>;
-};
-
-export type PageFilter = {
-  body?: InputMaybe<RichTextFilter>;
-};
-
-export type StringFilter = {
-  startsWith?: InputMaybe<Scalars['String']>;
-  eq?: InputMaybe<Scalars['String']>;
-  exists?: InputMaybe<Scalars['Boolean']>;
-};
-
-export type BookmarksFilter = {
-  title?: InputMaybe<StringFilter>;
-  url?: InputMaybe<StringFilter>;
-};
-
-export type DocumentFilter = {
-  page?: InputMaybe<PageFilter>;
-  bookmarks?: InputMaybe<BookmarksFilter>;
 };
 
 export type DocumentConnectionEdges = {
@@ -184,7 +155,6 @@ export type CollectionDocumentsArgs = {
   after?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Float']>;
   last?: InputMaybe<Scalars['Float']>;
-  filter?: InputMaybe<DocumentFilter>;
 };
 
 export type DocumentNode = PageDocument | BookmarksDocument;
