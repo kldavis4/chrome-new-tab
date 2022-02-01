@@ -56,7 +56,7 @@ export type Document = {
 
 /** A relay-compliant pagination connection */
 export type Connection = {
-  totalCount: Scalars['Int'];
+  totalCount: Scalars['Float'];
 };
 
 export type Query = {
@@ -93,8 +93,9 @@ export type QueryGetDocumentArgs = {
 export type QueryGetDocumentListArgs = {
   before?: InputMaybe<Scalars['String']>;
   after?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Float']>;
+  last?: InputMaybe<Scalars['Float']>;
+  filter?: InputMaybe<DocumentFilter>;
 };
 
 
@@ -106,8 +107,9 @@ export type QueryGetPageDocumentArgs = {
 export type QueryGetPageListArgs = {
   before?: InputMaybe<Scalars['String']>;
   after?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Float']>;
+  last?: InputMaybe<Scalars['Float']>;
+  filter?: InputMaybe<PageFilter>;
 };
 
 
@@ -119,8 +121,35 @@ export type QueryGetBookmarksDocumentArgs = {
 export type QueryGetBookmarksListArgs = {
   before?: InputMaybe<Scalars['String']>;
   after?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Float']>;
+  last?: InputMaybe<Scalars['Float']>;
+  filter?: InputMaybe<BookmarksFilter>;
+};
+
+export type RichTextFilter = {
+  startsWith?: InputMaybe<Scalars['String']>;
+  eq?: InputMaybe<Scalars['String']>;
+  exists?: InputMaybe<Scalars['Boolean']>;
+};
+
+export type PageFilter = {
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type StringFilter = {
+  startsWith?: InputMaybe<Scalars['String']>;
+  eq?: InputMaybe<Scalars['String']>;
+  exists?: InputMaybe<Scalars['Boolean']>;
+};
+
+export type BookmarksFilter = {
+  title?: InputMaybe<StringFilter>;
+  url?: InputMaybe<StringFilter>;
+};
+
+export type DocumentFilter = {
+  page?: InputMaybe<PageFilter>;
+  bookmarks?: InputMaybe<BookmarksFilter>;
 };
 
 export type DocumentConnectionEdges = {
@@ -132,7 +161,7 @@ export type DocumentConnectionEdges = {
 export type DocumentConnection = Connection & {
   __typename?: 'DocumentConnection';
   pageInfo?: Maybe<PageInfo>;
-  totalCount: Scalars['Int'];
+  totalCount: Scalars['Float'];
   edges?: Maybe<Array<Maybe<DocumentConnectionEdges>>>;
 };
 
@@ -153,8 +182,9 @@ export type Collection = {
 export type CollectionDocumentsArgs = {
   before?: InputMaybe<Scalars['String']>;
   after?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Float']>;
+  last?: InputMaybe<Scalars['Float']>;
+  filter?: InputMaybe<DocumentFilter>;
 };
 
 export type DocumentNode = PageDocument | BookmarksDocument;
@@ -183,7 +213,7 @@ export type PageConnectionEdges = {
 export type PageConnection = Connection & {
   __typename?: 'PageConnection';
   pageInfo?: Maybe<PageInfo>;
-  totalCount: Scalars['Int'];
+  totalCount: Scalars['Float'];
   edges?: Maybe<Array<Maybe<PageConnectionEdges>>>;
 };
 
@@ -212,7 +242,7 @@ export type BookmarksConnectionEdges = {
 export type BookmarksConnection = Connection & {
   __typename?: 'BookmarksConnection';
   pageInfo?: Maybe<PageInfo>;
-  totalCount: Scalars['Int'];
+  totalCount: Scalars['Float'];
   edges?: Maybe<Array<Maybe<BookmarksConnectionEdges>>>;
 };
 
