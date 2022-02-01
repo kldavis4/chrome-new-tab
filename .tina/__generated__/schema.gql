@@ -73,6 +73,7 @@ input StringFilter {
 input BookmarksFilter {
   title: StringFilter
   url: StringFilter
+  keyBinding: StringFilter
 }
 
 input DocumentFilter {
@@ -132,6 +133,7 @@ type PageConnection implements Connection {
 type Bookmarks {
   title: String
   url: String
+  keyBinding: String
 }
 
 type BookmarksDocument implements Node & Document {
@@ -176,6 +178,7 @@ input PageMutation {
 input BookmarksMutation {
   title: String
   url: String
+  keyBinding: String
 }
 
 schema {

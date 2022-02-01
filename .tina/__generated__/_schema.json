@@ -53,6 +53,15 @@
             "bookmarks",
             "url"
           ]
+        },
+        {
+          "type": "string",
+          "label": "Key Binding",
+          "name": "keyBinding",
+          "namespace": [
+            "bookmarks",
+            "keyBinding"
+          ]
         }
       ],
       "namespace": [

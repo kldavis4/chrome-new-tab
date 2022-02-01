@@ -1,5 +1,5 @@
+import { useEffect } from 'react'
 import { staticRequest } from "tinacms";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Layout } from "../components/Layout";
 import { useTina } from "tinacms/dist/edit-state";
 import Link from "next/link";
@@ -9,6 +9,7 @@ const query = `{
     edges {
       node {
         data {
+          keyBinding
           title
           url          
         }
@@ -26,6 +27,27 @@ export default function Home(props) {
   });
 
   const bookmarksList = data.getBookmarksList.edges;
+  const codeToUrl = {}
+
+  if (data) {
+    for (let bookmark of bookmarksList) {
+      if (bookmark.node.data.keyBinding) {
+        codeToUrl[bookmark.node.data.keyBinding] = bookmark.node.data.url
+      }
+    }
+  }
+
+  useEffect(function onFirstMount() {
+    function handleOnKeyDown(evt) {
+      const url = codeToUrl[evt.key]
+      if (url) {
+        // TODO flash a confirmation here
+        window.location.href = url
+      }
+    }
+
+    window.addEventListener("keydown", handleOnKeyDown);
+  }, []); // empty dependencies array means "run this once on first mount"
 
   return (
     <Layout>
@@ -33,7 +55,7 @@ export default function Home(props) {
         {bookmarksList.map((bookmark) => (
           <div key={bookmark.node.id}>
             <Link href={bookmark.node.data.url}>
-              <a>{bookmark.node.data.title}</a>
+              <a>{bookmark.node.data.keyBinding} - {bookmark.node.data.title}</a>
             </Link>
           </div>
         ))}

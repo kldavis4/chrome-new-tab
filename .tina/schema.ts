@@ -30,6 +30,11 @@ export default defineSchema({
           label: 'URL',
           name: 'url',
         },
+        {
+          type: 'string',
+          label: 'Key Binding',
+          name: 'keyBinding',
+        },
       ],
     },
   ],

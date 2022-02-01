@@ -5,4 +5,5 @@ fragment PageParts on Page {
 fragment BookmarksParts on Bookmarks {
   title
   url
+  keyBinding
 }

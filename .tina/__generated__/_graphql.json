@@ -1092,6 +1092,20 @@
               "value": "StringFilter"
             }
           }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "keyBinding"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "StringFilter"
+            }
+          }
         }
       ]
     },
@@ -1802,6 +1816,21 @@
           "name": {
             "kind": "Name",
             "value": "url"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "keyBinding"
           },
           "arguments": [],
           "type": {
@@ -2569,6 +2598,20 @@
           "name": {
             "kind": "Name",
             "value": "url"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "keyBinding"
           },
           "type": {
             "kind": "NamedType",
