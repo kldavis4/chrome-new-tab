@@ -37,8 +37,8 @@ query getPageList {
   }
 }
 
-query getPostDocument($relativePath: String!) {
-  getPostDocument(relativePath: $relativePath) {
+query getBookmarksDocument($relativePath: String!) {
+  getBookmarksDocument(relativePath: $relativePath) {
     sys {
       filename
       basename
@@ -49,13 +49,13 @@ query getPostDocument($relativePath: String!) {
     }
     id
     data {
-      ...PostParts
+      ...BookmarksParts
     }
   }
 }
 
-query getPostList {
-  getPostList {
+query getBookmarksList {
+  getBookmarksList {
     totalCount
     edges {
       node {
@@ -69,7 +69,7 @@ query getPostList {
           extension
         }
         data {
-          ...PostParts
+          ...BookmarksParts
         }
       }
     }

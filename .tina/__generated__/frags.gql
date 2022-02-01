@@ -2,7 +2,7 @@ fragment PageParts on Page {
   body
 }
 
-fragment PostParts on Post {
+fragment BookmarksParts on Bookmarks {
   title
-  body
+  url
 }

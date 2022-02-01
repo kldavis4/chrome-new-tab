@@ -785,7 +785,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "getPostDocument"
+            "value": "getBookmarksDocument"
           },
           "arguments": [
             {
@@ -809,7 +809,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PostDocument"
+                "value": "BookmarksDocument"
               }
             }
           }
@@ -818,7 +818,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "getPostList"
+            "value": "getBookmarksList"
           },
           "arguments": [
             {
@@ -884,7 +884,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PostConnection"
+                "value": "BookmarksConnection"
               }
             }
           }
@@ -1242,7 +1242,7 @@
           "kind": "NamedType",
           "name": {
             "kind": "Name",
-            "value": "PostDocument"
+            "value": "BookmarksDocument"
           }
         }
       ]
@@ -1524,7 +1524,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "Post"
+        "value": "Bookmarks"
       },
       "fields": [
         {
@@ -1546,7 +1546,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "body"
+            "value": "url"
           },
           "arguments": [],
           "type": {
@@ -1580,7 +1580,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PostDocument"
+        "value": "BookmarksDocument"
       },
       "fields": [
         {
@@ -1632,7 +1632,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "Post"
+                "value": "Bookmarks"
               }
             }
           }
@@ -1699,7 +1699,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PostConnectionEdges"
+        "value": "BookmarksConnectionEdges"
       },
       "fields": [
         {
@@ -1728,7 +1728,7 @@
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PostDocument"
+              "value": "BookmarksDocument"
             }
           }
         }
@@ -1748,7 +1748,7 @@
       "directives": [],
       "name": {
         "kind": "Name",
-        "value": "PostConnection"
+        "value": "BookmarksConnection"
       },
       "fields": [
         {
@@ -1797,7 +1797,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PostConnectionEdges"
+                "value": "BookmarksConnectionEdges"
               }
             }
           }
@@ -2124,7 +2124,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "updatePostDocument"
+            "value": "updateBookmarksDocument"
           },
           "arguments": [
             {
@@ -2156,7 +2156,7 @@
                   "kind": "NamedType",
                   "name": {
                     "kind": "Name",
-                    "value": "PostMutation"
+                    "value": "BookmarksMutation"
                   }
                 }
               }
@@ -2168,7 +2168,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PostDocument"
+                "value": "BookmarksDocument"
               }
             }
           }
@@ -2177,7 +2177,7 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
-            "value": "createPostDocument"
+            "value": "createBookmarksDocument"
           },
           "arguments": [
             {
@@ -2209,7 +2209,7 @@
                   "kind": "NamedType",
                   "name": {
                     "kind": "Name",
-                    "value": "PostMutation"
+                    "value": "BookmarksMutation"
                   }
                 }
               }
@@ -2221,7 +2221,7 @@
               "kind": "NamedType",
               "name": {
                 "kind": "Name",
-                "value": "PostDocument"
+                "value": "BookmarksDocument"
               }
             }
           }
@@ -2253,13 +2253,13 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "post"
+            "value": "bookmarks"
           },
           "type": {
             "kind": "NamedType",
             "name": {
               "kind": "Name",
-              "value": "PostMutation"
+              "value": "BookmarksMutation"
             }
           }
         }
@@ -2292,7 +2292,7 @@
       "kind": "InputObjectTypeDefinition",
       "name": {
         "kind": "Name",
-        "value": "PostMutation"
+        "value": "BookmarksMutation"
       },
       "fields": [
         {
@@ -2313,7 +2313,7 @@
           "kind": "InputValueDefinition",
           "name": {
             "kind": "Name",
-            "value": "body"
+            "value": "url"
           },
           "type": {
             "kind": "NamedType",

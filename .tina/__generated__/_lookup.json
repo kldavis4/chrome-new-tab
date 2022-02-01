@@ -4,7 +4,7 @@
     "resolveType": "multiCollectionDocumentList",
     "collections": [
       "page",
-      "post"
+      "bookmarks"
     ]
   },
   "Node": {
@@ -29,16 +29,16 @@
     "resolveType": "collectionDocumentList",
     "collection": "page"
   },
-  "PostDocument": {
-    "type": "PostDocument",
+  "BookmarksDocument": {
+    "type": "BookmarksDocument",
     "resolveType": "collectionDocument",
-    "collection": "post",
-    "createPostDocument": "create",
-    "updatePostDocument": "update"
+    "collection": "bookmarks",
+    "createBookmarksDocument": "create",
+    "updateBookmarksDocument": "update"
   },
-  "PostConnection": {
-    "type": "PostConnection",
+  "BookmarksConnection": {
+    "type": "BookmarksConnection",
     "resolveType": "collectionDocumentList",
-    "collection": "post"
+    "collection": "bookmarks"
   }
 }

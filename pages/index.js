@@ -2,11 +2,17 @@ import { staticRequest } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Layout } from "../components/Layout";
 import { useTina } from "tinacms/dist/edit-state";
+import Link from "next/link";
 
 const query = `{
-  getPageDocument(relativePath: "home.mdx"){
-    data{
-      body
+  getBookmarksList{
+    edges {
+      node {
+        data {
+          title
+          url          
+        }
+      }
     }
   }
 }`;
@@ -19,10 +25,19 @@ export default function Home(props) {
     data: props.data,
   });
 
-  const content = data.getPageDocument.data.body;
+  const bookmarksList = data.getBookmarksList.edges;
+
   return (
     <Layout>
-      <TinaMarkdown content={content} />
+      <div>
+        {bookmarksList.map((bookmark) => (
+          <div key={bookmark.node.id}>
+            <Link href={bookmark.node.data.url}>
+              <a>{bookmark.node.data.title}</a>
+            </Link>
+          </div>
+        ))}
+      </div>
     </Layout>
   );
 }

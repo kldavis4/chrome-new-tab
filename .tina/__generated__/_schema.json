@@ -28,35 +28,31 @@
       ]
     },
     {
-      "label": "Blog Posts",
-      "name": "post",
-      "path": "content/post",
+      "label": "Bookmarks",
+      "name": "bookmarks",
+      "path": "content/bookmarks",
       "fields": [
         {
           "type": "string",
           "label": "Title",
           "name": "title",
           "namespace": [
-            "post",
+            "bookmarks",
             "title"
           ]
         },
         {
           "type": "string",
-          "label": "Blog Post Body",
-          "name": "body",
-          "isBody": true,
-          "ui": {
-            "component": "textarea"
-          },
+          "label": "URL",
+          "name": "url",
           "namespace": [
-            "post",
-            "body"
+            "bookmarks",
+            "url"
           ]
         }
       ],
       "namespace": [
-        "post"
+        "bookmarks"
       ]
     }
   ]

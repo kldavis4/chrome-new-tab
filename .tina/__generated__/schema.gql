@@ -50,8 +50,8 @@ type Query {
   getDocumentFields: JSON!
   getPageDocument(relativePath: String): PageDocument!
   getPageList(before: String, after: String, first: Int, last: Int): PageConnection!
-  getPostDocument(relativePath: String): PostDocument!
-  getPostList(before: String, after: String, first: Int, last: Int): PostConnection!
+  getBookmarksDocument(relativePath: String): BookmarksDocument!
+  getBookmarksList(before: String, after: String, first: Int, last: Int): BookmarksConnection!
 }
 
 type DocumentConnectionEdges {
@@ -77,7 +77,7 @@ type Collection {
   documents(before: String, after: String, first: Int, last: Int): DocumentConnection!
 }
 
-union DocumentNode = PageDocument | PostDocument
+union DocumentNode = PageDocument | BookmarksDocument
 
 type Page {
   body: JSON
@@ -103,29 +103,29 @@ type PageConnection implements Connection {
   edges: [PageConnectionEdges]
 }
 
-type Post {
+type Bookmarks {
   title: String
-  body: String
+  url: String
 }
 
-type PostDocument implements Node & Document {
+type BookmarksDocument implements Node & Document {
   id: ID!
   sys: SystemInfo!
-  data: Post!
+  data: Bookmarks!
   form: JSON!
   values: JSON!
   dataJSON: JSON!
 }
 
-type PostConnectionEdges {
+type BookmarksConnectionEdges {
   cursor: String
-  node: PostDocument
+  node: BookmarksDocument
 }
 
-type PostConnection implements Connection {
+type BookmarksConnection implements Connection {
   pageInfo: PageInfo
   totalCount: Int!
-  edges: [PostConnectionEdges]
+  edges: [BookmarksConnectionEdges]
 }
 
 type Mutation {
@@ -134,22 +134,22 @@ type Mutation {
   createDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
   updatePageDocument(relativePath: String!, params: PageMutation!): PageDocument!
   createPageDocument(relativePath: String!, params: PageMutation!): PageDocument!
-  updatePostDocument(relativePath: String!, params: PostMutation!): PostDocument!
-  createPostDocument(relativePath: String!, params: PostMutation!): PostDocument!
+  updateBookmarksDocument(relativePath: String!, params: BookmarksMutation!): BookmarksDocument!
+  createBookmarksDocument(relativePath: String!, params: BookmarksMutation!): BookmarksDocument!
 }
 
 input DocumentMutation {
   page: PageMutation
-  post: PostMutation
+  bookmarks: BookmarksMutation
 }
 
 input PageMutation {
   body: JSON
 }
 
-input PostMutation {
+input BookmarksMutation {
   title: String
-  body: String
+  url: String
 }
 
 schema {

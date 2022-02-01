@@ -69,8 +69,8 @@ export type Query = {
   getDocumentFields: Scalars['JSON'];
   getPageDocument: PageDocument;
   getPageList: PageConnection;
-  getPostDocument: PostDocument;
-  getPostList: PostConnection;
+  getBookmarksDocument: BookmarksDocument;
+  getBookmarksList: BookmarksConnection;
 };
 
 
@@ -111,12 +111,12 @@ export type QueryGetPageListArgs = {
 };
 
 
-export type QueryGetPostDocumentArgs = {
+export type QueryGetBookmarksDocumentArgs = {
   relativePath?: InputMaybe<Scalars['String']>;
 };
 
 
-export type QueryGetPostListArgs = {
+export type QueryGetBookmarksListArgs = {
   before?: InputMaybe<Scalars['String']>;
   after?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
@@ -157,7 +157,7 @@ export type CollectionDocumentsArgs = {
   last?: InputMaybe<Scalars['Int']>;
 };
 
-export type DocumentNode = PageDocument | PostDocument;
+export type DocumentNode = PageDocument | BookmarksDocument;
 
 export type Page = {
   __typename?: 'Page';
@@ -187,33 +187,33 @@ export type PageConnection = Connection & {
   edges?: Maybe<Array<Maybe<PageConnectionEdges>>>;
 };
 
-export type Post = {
-  __typename?: 'Post';
+export type Bookmarks = {
+  __typename?: 'Bookmarks';
   title?: Maybe<Scalars['String']>;
-  body?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
 };
 
-export type PostDocument = Node & Document & {
-  __typename?: 'PostDocument';
+export type BookmarksDocument = Node & Document & {
+  __typename?: 'BookmarksDocument';
   id: Scalars['ID'];
   sys: SystemInfo;
-  data: Post;
+  data: Bookmarks;
   form: Scalars['JSON'];
   values: Scalars['JSON'];
   dataJSON: Scalars['JSON'];
 };
 
-export type PostConnectionEdges = {
-  __typename?: 'PostConnectionEdges';
+export type BookmarksConnectionEdges = {
+  __typename?: 'BookmarksConnectionEdges';
   cursor?: Maybe<Scalars['String']>;
-  node?: Maybe<PostDocument>;
+  node?: Maybe<BookmarksDocument>;
 };
 
-export type PostConnection = Connection & {
-  __typename?: 'PostConnection';
+export type BookmarksConnection = Connection & {
+  __typename?: 'BookmarksConnection';
   pageInfo?: Maybe<PageInfo>;
   totalCount: Scalars['Int'];
-  edges?: Maybe<Array<Maybe<PostConnectionEdges>>>;
+  edges?: Maybe<Array<Maybe<BookmarksConnectionEdges>>>;
 };
 
 export type Mutation = {
@@ -223,8 +223,8 @@ export type Mutation = {
   createDocument: DocumentNode;
   updatePageDocument: PageDocument;
   createPageDocument: PageDocument;
-  updatePostDocument: PostDocument;
-  createPostDocument: PostDocument;
+  updateBookmarksDocument: BookmarksDocument;
+  createBookmarksDocument: BookmarksDocument;
 };
 
 
@@ -261,34 +261,34 @@ export type MutationCreatePageDocumentArgs = {
 };
 
 
-export type MutationUpdatePostDocumentArgs = {
+export type MutationUpdateBookmarksDocumentArgs = {
   relativePath: Scalars['String'];
-  params: PostMutation;
+  params: BookmarksMutation;
 };
 
 
-export type MutationCreatePostDocumentArgs = {
+export type MutationCreateBookmarksDocumentArgs = {
   relativePath: Scalars['String'];
-  params: PostMutation;
+  params: BookmarksMutation;
 };
 
 export type DocumentMutation = {
   page?: InputMaybe<PageMutation>;
-  post?: InputMaybe<PostMutation>;
+  bookmarks?: InputMaybe<BookmarksMutation>;
 };
 
 export type PageMutation = {
   body?: InputMaybe<Scalars['JSON']>;
 };
 
-export type PostMutation = {
+export type BookmarksMutation = {
   title?: InputMaybe<Scalars['String']>;
-  body?: InputMaybe<Scalars['String']>;
+  url?: InputMaybe<Scalars['String']>;
 };
 
 export type PagePartsFragment = { __typename?: 'Page', body?: any | null | undefined };
 
-export type PostPartsFragment = { __typename?: 'Post', title?: string | null | undefined, body?: string | null | undefined };
+export type BookmarksPartsFragment = { __typename?: 'Bookmarks', title?: string | null | undefined, url?: string | null | undefined };
 
 export type GetPageDocumentQueryVariables = Exact<{
   relativePath: Scalars['String'];
@@ -302,27 +302,27 @@ export type GetPageListQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetPageListQuery = { __typename?: 'Query', getPageList: { __typename?: 'PageConnection', totalCount: number, edges?: Array<{ __typename?: 'PageConnectionEdges', node?: { __typename?: 'PageDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Page', body?: any | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
 
-export type GetPostDocumentQueryVariables = Exact<{
+export type GetBookmarksDocumentQueryVariables = Exact<{
   relativePath: Scalars['String'];
 }>;
 
 
-export type GetPostDocumentQuery = { __typename?: 'Query', getPostDocument: { __typename?: 'PostDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Post', title?: string | null | undefined, body?: string | null | undefined } } };
+export type GetBookmarksDocumentQuery = { __typename?: 'Query', getBookmarksDocument: { __typename?: 'BookmarksDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Bookmarks', title?: string | null | undefined, url?: string | null | undefined } } };
 
-export type GetPostListQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetBookmarksListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPostListQuery = { __typename?: 'Query', getPostList: { __typename?: 'PostConnection', totalCount: number, edges?: Array<{ __typename?: 'PostConnectionEdges', node?: { __typename?: 'PostDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Post', title?: string | null | undefined, body?: string | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
+export type GetBookmarksListQuery = { __typename?: 'Query', getBookmarksList: { __typename?: 'BookmarksConnection', totalCount: number, edges?: Array<{ __typename?: 'BookmarksConnectionEdges', node?: { __typename?: 'BookmarksDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Bookmarks', title?: string | null | undefined, url?: string | null | undefined } } | null | undefined } | null | undefined> | null | undefined } };
 
 export const PagePartsFragmentDoc = gql`
     fragment PageParts on Page {
   body
 }
     `;
-export const PostPartsFragmentDoc = gql`
-    fragment PostParts on Post {
+export const BookmarksPartsFragmentDoc = gql`
+    fragment BookmarksParts on Bookmarks {
   title
-  body
+  url
 }
     `;
 export const GetPageDocumentDocument = gql`
@@ -366,9 +366,9 @@ export const GetPageListDocument = gql`
   }
 }
     ${PagePartsFragmentDoc}`;
-export const GetPostDocumentDocument = gql`
-    query getPostDocument($relativePath: String!) {
-  getPostDocument(relativePath: $relativePath) {
+export const GetBookmarksDocumentDocument = gql`
+    query getBookmarksDocument($relativePath: String!) {
+  getBookmarksDocument(relativePath: $relativePath) {
     sys {
       filename
       basename
@@ -379,14 +379,14 @@ export const GetPostDocumentDocument = gql`
     }
     id
     data {
-      ...PostParts
+      ...BookmarksParts
     }
   }
 }
-    ${PostPartsFragmentDoc}`;
-export const GetPostListDocument = gql`
-    query getPostList {
-  getPostList {
+    ${BookmarksPartsFragmentDoc}`;
+export const GetBookmarksListDocument = gql`
+    query getBookmarksList {
+  getBookmarksList {
     totalCount
     edges {
       node {
@@ -400,13 +400,13 @@ export const GetPostListDocument = gql`
           extension
         }
         data {
-          ...PostParts
+          ...BookmarksParts
         }
       }
     }
   }
 }
-    ${PostPartsFragmentDoc}`;
+    ${BookmarksPartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
@@ -416,11 +416,11 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
     getPageList(variables?: GetPageListQueryVariables, options?: C): Promise<{data: GetPageListQuery, variables: GetPageListQueryVariables, query: string}> {
         return requester<{data: GetPageListQuery, variables: GetPageListQueryVariables, query: string}, GetPageListQueryVariables>(GetPageListDocument, variables, options);
       },
-    getPostDocument(variables: GetPostDocumentQueryVariables, options?: C): Promise<{data: GetPostDocumentQuery, variables: GetPostDocumentQueryVariables, query: string}> {
-        return requester<{data: GetPostDocumentQuery, variables: GetPostDocumentQueryVariables, query: string}, GetPostDocumentQueryVariables>(GetPostDocumentDocument, variables, options);
+    getBookmarksDocument(variables: GetBookmarksDocumentQueryVariables, options?: C): Promise<{data: GetBookmarksDocumentQuery, variables: GetBookmarksDocumentQueryVariables, query: string}> {
+        return requester<{data: GetBookmarksDocumentQuery, variables: GetBookmarksDocumentQueryVariables, query: string}, GetBookmarksDocumentQueryVariables>(GetBookmarksDocumentDocument, variables, options);
       },
-    getPostList(variables?: GetPostListQueryVariables, options?: C): Promise<{data: GetPostListQuery, variables: GetPostListQueryVariables, query: string}> {
-        return requester<{data: GetPostListQuery, variables: GetPostListQueryVariables, query: string}, GetPostListQueryVariables>(GetPostListDocument, variables, options);
+    getBookmarksList(variables?: GetBookmarksListQueryVariables, options?: C): Promise<{data: GetBookmarksListQuery, variables: GetBookmarksListQueryVariables, query: string}> {
+        return requester<{data: GetBookmarksListQuery, variables: GetBookmarksListQueryVariables, query: string}, GetBookmarksListQueryVariables>(GetBookmarksListDocument, variables, options);
       }
     };
   }
