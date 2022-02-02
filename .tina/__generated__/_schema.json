@@ -8,26 +8,6 @@
   "meta": {},
   "collections": [
     {
-      "label": "Page Content",
-      "name": "page",
-      "path": "content/page",
-      "fields": [
-        {
-          "name": "body",
-          "label": "Main Content",
-          "type": "rich-text",
-          "isBody": true,
-          "namespace": [
-            "page",
-            "body"
-          ]
-        }
-      ],
-      "namespace": [
-        "page"
-      ]
-    },
-    {
       "label": "Bookmarks",
       "name": "bookmarks",
       "path": "content/bookmarks",
