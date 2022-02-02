@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import {useEffect, useRef, useState} from 'react'
 import {staticRequest} from "tinacms";
 import {Layout} from "../components/Layout";
 import {useTina} from "tinacms/dist/edit-state";
@@ -22,6 +22,10 @@ const query = `{
 
 export default function Home(props) {
     const [selectedSite, setSelectedSite] = useState('');
+    const textInput = useRef(null)
+    useEffect(() => {
+        textInput.current.focus();
+    }, []);
 
     // data passes though in production mode and data is updated to the sidebar data in edit-mode
     const {data} = useTina({
@@ -62,6 +66,7 @@ export default function Home(props) {
 
     return (
         <Layout>
+            <div className="invisible"><form><input type="text" ref={textInput} /></form></div>
             <div className="bg-white">
                 <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
                     <div
