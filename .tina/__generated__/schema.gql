@@ -79,6 +79,7 @@ union DocumentNode = BookmarksDocument
 
 type Bookmarks {
   title: String
+  site: String
   url: String
   keyBinding: String
 }
@@ -117,6 +118,7 @@ input DocumentMutation {
 
 input BookmarksMutation {
   title: String
+  site: String
   url: String
   keyBinding: String
 }

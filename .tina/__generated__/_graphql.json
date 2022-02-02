@@ -1160,6 +1160,21 @@
           "kind": "FieldDefinition",
           "name": {
             "kind": "Name",
+            "value": "site"
+          },
+          "arguments": [],
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "FieldDefinition",
+          "name": {
+            "kind": "Name",
             "value": "url"
           },
           "arguments": [],
@@ -1786,6 +1801,20 @@
           "name": {
             "kind": "Name",
             "value": "title"
+          },
+          "type": {
+            "kind": "NamedType",
+            "name": {
+              "kind": "Name",
+              "value": "String"
+            }
+          }
+        },
+        {
+          "kind": "InputValueDefinition",
+          "name": {
+            "kind": "Name",
+            "value": "site"
           },
           "type": {
             "kind": "NamedType",

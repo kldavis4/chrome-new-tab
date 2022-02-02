@@ -14,6 +14,11 @@ export default defineSchema({
         },
         {
           type: 'string',
+          label: 'Site',
+          name: 'site',
+        },
+        {
+          type: 'string',
           label: 'URL',
           name: 'url',
         },

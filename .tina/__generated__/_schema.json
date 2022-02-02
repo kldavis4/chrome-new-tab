@@ -23,6 +23,15 @@
         },
         {
           "type": "string",
+          "label": "Site",
+          "name": "site",
+          "namespace": [
+            "bookmarks",
+            "site"
+          ]
+        },
+        {
+          "type": "string",
           "label": "URL",
           "name": "url",
           "namespace": [

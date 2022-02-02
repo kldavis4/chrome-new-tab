@@ -147,6 +147,7 @@ export type DocumentNode = BookmarksDocument;
 export type Bookmarks = {
   __typename?: 'Bookmarks';
   title?: Maybe<Scalars['String']>;
+  site?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
   keyBinding?: Maybe<Scalars['String']>;
 };
@@ -222,27 +223,29 @@ export type DocumentMutation = {
 
 export type BookmarksMutation = {
   title?: InputMaybe<Scalars['String']>;
+  site?: InputMaybe<Scalars['String']>;
   url?: InputMaybe<Scalars['String']>;
   keyBinding?: InputMaybe<Scalars['String']>;
 };
 
-export type BookmarksPartsFragment = { __typename?: 'Bookmarks', title?: string | null, url?: string | null, keyBinding?: string | null };
+export type BookmarksPartsFragment = { __typename?: 'Bookmarks', title?: string | null, site?: string | null, url?: string | null, keyBinding?: string | null };
 
 export type GetBookmarksDocumentQueryVariables = Exact<{
   relativePath: Scalars['String'];
 }>;
 
 
-export type GetBookmarksDocumentQuery = { __typename?: 'Query', getBookmarksDocument: { __typename?: 'BookmarksDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Bookmarks', title?: string | null, url?: string | null, keyBinding?: string | null } } };
+export type GetBookmarksDocumentQuery = { __typename?: 'Query', getBookmarksDocument: { __typename?: 'BookmarksDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Bookmarks', title?: string | null, site?: string | null, url?: string | null, keyBinding?: string | null } } };
 
 export type GetBookmarksListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetBookmarksListQuery = { __typename?: 'Query', getBookmarksList: { __typename?: 'BookmarksConnection', totalCount: number, edges?: Array<{ __typename?: 'BookmarksConnectionEdges', node?: { __typename?: 'BookmarksDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Bookmarks', title?: string | null, url?: string | null, keyBinding?: string | null } } | null } | null> | null } };
+export type GetBookmarksListQuery = { __typename?: 'Query', getBookmarksList: { __typename?: 'BookmarksConnection', totalCount: number, edges?: Array<{ __typename?: 'BookmarksConnectionEdges', node?: { __typename?: 'BookmarksDocument', id: string, sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, data: { __typename?: 'Bookmarks', title?: string | null, site?: string | null, url?: string | null, keyBinding?: string | null } } | null } | null> | null } };
 
 export const BookmarksPartsFragmentDoc = gql`
     fragment BookmarksParts on Bookmarks {
   title
+  site
   url
   keyBinding
 }

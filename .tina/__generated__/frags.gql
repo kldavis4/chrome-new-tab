@@ -1,5 +1,6 @@
 fragment BookmarksParts on Bookmarks {
   title
+  site
   url
   keyBinding
 }

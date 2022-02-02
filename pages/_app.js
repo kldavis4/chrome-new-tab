@@ -1,3 +1,4 @@
+import '../styles/globals.css'
 import dynamic from "next/dynamic";
 import { TinaEditProvider } from "tinacms/dist/edit-state";
 import { RouteMappingPlugin } from "tinacms";
