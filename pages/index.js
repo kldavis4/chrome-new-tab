@@ -30,7 +30,11 @@ export default function Home(props) {
         data: props.data,
     });
 
-    const bookmarksList = data.getBookmarksList.edges;
+    const bookmarksList = data.getBookmarksList.edges.sort((a, b) => {
+        const codeA = (a.node.data.keyBinding && a.node.data.keyBinding.charCodeAt(0)) || -1
+        const codeB = (b.node.data.keyBinding && b.node.data.keyBinding.charCodeAt(0)) || -1
+        return codeA - codeB
+    });
     const codeToBookmark = {}
 
     if (data) {
