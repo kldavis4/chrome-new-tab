@@ -111,7 +111,7 @@ export default function Home(props) {
                                     </h3>
                                 </div>
                                 <div className="relative p-6 flex-auto bg-slate-300">
-                                    <img src="https://tina.io/img/rico-replacement.jpg"></img>
+                                    <img src="/llamapronk-1.gif"></img>
                                 </div>
                             </div>
                         </div>
